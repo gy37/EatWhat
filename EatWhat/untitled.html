@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>计划详情</title>
+    <script>
+    function display_alert(object) {
+    	console.log(object); 
+    	var firstTD = object.getElementsByTagName('td')[0];
+    	// window.webkit.messageHandlers.JSObject.postMessage(firstTD.innerHTML); 
+    	deleteTR(firstTD.innerHTML);
+   	}
+   	function deleteTR(content) {
+    	var table = document.getElementById('content-table'); 
+    	var trs = table.getElementsByTagName('tr');
+    	for(var i = 0; i < trs.length; i++) {/*js中用var定义变量*/
+     		var tr = trs[i]; 
+     		var tds = tr.getElementsByTagName('td');
+     		if (tds.length == 0) continue;
+     		var firstTD = tds[0]; 
+     		if (firstTD.innerHTML == content) {
+     			tr.parentNode.removeChild(tr); /*table.removeChild not parent node 解决办法*/
+     		} 
+     	} 
+     }
+    </script>
+</head>
+
+<body>
+    <table id="content-table" ; style="border:1px solid #B7E6EF; color:#B7E6EF; font-size:15px; width:100%; text-align:left; border-collapse: collapse;">
+        <tr style="border-bottom:1px solid #B7E6EF;">
+            <th>Date</th>
+            <th>Cool</th>
+            <th>Cold</th>
+            <th>Hot</th>
+            <th>Big</th>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-10-29</td>
+            <td>大米</td>
+            <td>莲子</td>
+            <td>红豆</td>
+            <td>桂圆</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-10-30</td>
+            <td>大米</td>
+            <td>薏米</td>
+            <td>黑米</td>
+            <td>红枣</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-10-31</td>
+            <td>大米</td>
+            <td>莲子</td>
+            <td>黑芝麻</td>
+            <td>黑豆</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-01</td>
+            <td>大米</td>
+            <td>薏米</td>
+            <td>红豆</td>
+            <td>桂圆</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-02</td>
+            <td>大米</td>
+            <td>莲子</td>
+            <td>黑米</td>
+            <td>红枣</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-03</td>
+            <td>大米</td>
+            <td>薏米</td>
+            <td>黑芝麻</td>
+            <td>黑豆</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-04</td>
+            <td>大米</td>
+            <td>莲子</td>
+            <td>红豆</td>
+            <td>桂圆</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-05</td>
+            <td>大米</td>
+            <td>薏米</td>
+            <td>黑米</td>
+            <td>红枣</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-06</td>
+            <td>大米</td>
+            <td>莲子</td>
+            <td>黑芝麻</td>
+            <td>黑豆</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-07</td>
+            <td>大米</td>
+            <td>薏米</td>
+            <td>红豆</td>
+            <td>桂圆</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-08</td>
+            <td>大米</td>
+            <td>莲子</td>
+            <td>黑米</td>
+            <td>红枣</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-09</td>
+            <td>大米</td>
+            <td>薏米</td>
+            <td>黑芝麻</td>
+            <td>黑豆</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-10</td>
+            <td>大米</td>
+            <td>莲子</td>
+            <td>红豆</td>
+            <td>桂圆</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-11</td>
+            <td>大米</td>
+            <td>薏米</td>
+            <td>黑米</td>
+            <td>红枣</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-12</td>
+            <td>大米</td>
+            <td>莲子</td>
+            <td>黑芝麻</td>
+            <td>黑豆</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-13</td>
+            <td>大米</td>
+            <td>薏米</td>
+            <td>红豆</td>
+            <td>桂圆</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-14</td>
+            <td>大米</td>
+            <td>莲子</td>
+            <td>黑米</td>
+            <td>红枣</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-15</td>
+            <td>大米</td>
+            <td>薏米</td>
+            <td>黑芝麻</td>
+            <td>黑豆</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-16</td>
+            <td>大米</td>
+            <td>莲子</td>
+            <td>红豆</td>
+            <td>桂圆</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-17</td>
+            <td>大米</td>
+            <td>薏米</td>
+            <td>黑米</td>
+            <td>红枣</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-19</td>
+            <td>大米</td>
+            <td>莲子</td>
+            <td>黑芝麻</td>
+            <td>黑豆</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-20</td>
+            <td>大米</td>
+            <td>薏米</td>
+            <td>红豆</td>
+            <td>桂圆</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-21</td>
+            <td>大米</td>
+            <td>莲子</td>
+            <td>黑米</td>
+            <td>红枣</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-22</td>
+            <td>大米</td>
+            <td>薏米</td>
+            <td>黑芝麻</td>
+            <td>黑豆</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-23</td>
+            <td>大米</td>
+            <td>莲子</td>
+            <td>红豆</td>
+            <td>桂圆</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-24</td>
+            <td>大米</td>
+            <td>薏米</td>
+            <td>黑米</td>
+            <td>红枣</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-25</td>
+            <td>大米</td>
+            <td>莲子</td>
+            <td>黑芝麻</td>
+            <td>黑豆</td>
+        </tr>
+        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+            <td>2018-11-26</td>
+            <td>大米</td>
+            <td>薏米</td>
+            <td>红豆</td>
+            <td>桂圆</td>
+        </tr>
+    </table>
+</body>
+
+</html>
