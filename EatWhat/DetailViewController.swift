@@ -86,7 +86,7 @@ class DetailViewController: UIViewController {
     private func getHTMLString() -> String {
         
         //顶部加入年月日选项，可切换
-        let html = "<!DOCTYPE html><html><head><meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\"/><title>计划详情</title><script>function display_alert(object) { console.log(object); var firstTD = object.getElementsByTagName('td')[0]; window.webkit.messageHandlers.JSObject.postMessage(firstTD.innerHTML); } function deleteTR(content) { console.log(content); var table = document.getElementById('content-table'); var trs = table.getElementsByTagName('tr'); for(var i = 0; i < trs.length; i++) { var tr = trs[i]; var tds = tr.getElementsByTagName('td'); if (tds.length == 0) continue; var firstTD = tds[0]; if (firstTD.innerHTML == content) { tr.parentNode.removeChild(tr); } } } </script></head><body><table id=\"content-table\"; style=\"border:1px solid \(textColor.getHexString()); color:\(textColor.getHexString()); font-size:15px; width:100%; text-align:left; border-collapse: collapse;\">\(getPlanString())</table></body></html>"
+        let html = "<!DOCTYPE html><html><head><meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\"/><title>计划详情</title><script>function display_alert(object) { console.log(object); var firstTD = object.getElementsByTagName('td')[0]; window.webkit.messageHandlers.JSObject.postMessage(firstTD.innerHTML); } function deleteTR(content) { console.log(content); var table = document.getElementById('content-table'); var trs = table.getElementsByTagName('tr'); for(var i = 0; i < trs.length; i++) { var tr = trs[i]; var tds = tr.getElementsByTagName('td'); if (tds.length == 0) continue; var firstTD = tds[0]; if (firstTD.innerHTML == content) { tr.parentNode.removeChild(tr); } } } function display_month_data(object) { var td = object.getElementsByTagName('td')[0]; var string = td.innerHTML; var table = document.getElementById('content-table'); var trs = table.getElementsByTagName('tr'); for (var i = trs.length - 1; i >= 0; i--) { var tr = trs[i]; console.log(tr.className); if (tr.className == string) { tr.style.display = tr.style.display == \"none\" ? \"table-row\" : \"none\"; } } } </script><style type=\"text/css\"> .month{ border-bottom: 1px solid #ff0000; height: 30px; color: #ff0000; font-weight: bold; } </style></head><body><table id=\"content-table\"; style=\"border:1px solid \(textColor.getHexString()); color:\(textColor.getHexString()); font-size:15px; width:100%; text-align:left; border-collapse: collapse;\">\(getPlanString())</table></body></html>"
         return html
     }
     
@@ -96,10 +96,16 @@ class DetailViewController: UIViewController {
         for string in records {
             if string == "" { break }
             let str = string.components(separatedBy: ",")
+            let className = str[0].prefix(7)
             if recordString.count == 0 {
                 recordString = "<tr style=\"border-bottom:1px solid \(textColor.getHexString());\"><th>" + str[0] + "</th><th>" + str[1] + "</th><th>" + str[2] + "</th><th>" + str[3] + "</th><th>" + str[4] + "</th></tr>"
             } else {
-                recordString += "<tr style=\"border-bottom:1px solid \(textColor.getHexString());height:30px;\" onclick=\"display_alert(this)\"><td>" + str[0] + "</td><td>" + str[1] + "</td><td>" + str[2] + "</td><td>" + str[3] + "</td><td>" + str[4] + "</td></tr>"//<!-- 不能给tr标签设置样式 -->
+                if recordString.contains(className) {
+                    recordString += "<tr class=\"\(className)\" style=\"border-bottom:1px solid \(textColor.getHexString());height:30px;\" onclick=\"display_alert(this)\"><td>" + str[0] + "</td><td>" + str[1] + "</td><td>" + str[2] + "</td><td>" + str[3] + "</td><td>" + str[4] + "</td></tr>"//<!-- 不能给tr标签设置样式 -->
+                } else {
+                    recordString += "<tr class=\"month\" onclick=\"display_month_data(this)\"><td>\(className)</td></tr>";
+                    recordString += "<tr class=\"\(className)\" style=\"border-bottom:1px solid \(textColor.getHexString());height:30px;\" onclick=\"display_alert(this)\"><td>" + str[0] + "</td><td>" + str[1] + "</td><td>" + str[2] + "</td><td>" + str[3] + "</td><td>" + str[4] + "</td></tr>"//<!-- 不能给tr标签设置样式 -->
+                }
             }
         }
         return recordString

@@ -24,7 +24,28 @@
      		} 
      	} 
      }
+     function display_month_data(object) {
+        var td = object.getElementsByTagName('td')[0];
+        var string = td.innerHTML;
+        var table = document.getElementById('content-table'); 
+        var trs = table.getElementsByTagName('tr');
+        for (var i = trs.length - 1; i >= 0; i--) {
+            var tr = trs[i];
+            console.log(tr.className);
+            if (tr.className == string) {
+                tr.style.display = tr.style.display == "none" ? "table-row" : "none";
+            }
+        }
+     }
     </script>
+    <style type="text/css">
+        .month{
+            border-bottom: 1px solid #ff0000;
+            height: 30px;
+            color: #ff0000;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
@@ -36,196 +57,202 @@
             <th>Hot</th>
             <th>Big</th>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="month" onclick="display_month_data(this)">
+            <td>2018年10月</td>
+        </tr>
+        <tr class="2018-10" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-10-29</td>
             <td>大米</td>
             <td>莲子</td>
             <td>红豆</td>
             <td>桂圆</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-10" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-10-30</td>
             <td>大米</td>
             <td>薏米</td>
             <td>黑米</td>
             <td>红枣</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-10" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-10-31</td>
             <td>大米</td>
             <td>莲子</td>
             <td>黑芝麻</td>
             <td>黑豆</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="month" onclick="display_month_data(this)">
+            <td class="month">2018年11月</td>
+        </tr>
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-01</td>
             <td>大米</td>
             <td>薏米</td>
             <td>红豆</td>
             <td>桂圆</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-02</td>
             <td>大米</td>
             <td>莲子</td>
             <td>黑米</td>
             <td>红枣</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-03</td>
             <td>大米</td>
             <td>薏米</td>
             <td>黑芝麻</td>
             <td>黑豆</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-04</td>
             <td>大米</td>
             <td>莲子</td>
             <td>红豆</td>
             <td>桂圆</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-05</td>
             <td>大米</td>
             <td>薏米</td>
             <td>黑米</td>
             <td>红枣</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-06</td>
             <td>大米</td>
             <td>莲子</td>
             <td>黑芝麻</td>
             <td>黑豆</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-07</td>
             <td>大米</td>
             <td>薏米</td>
             <td>红豆</td>
             <td>桂圆</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-08</td>
             <td>大米</td>
             <td>莲子</td>
             <td>黑米</td>
             <td>红枣</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-09</td>
             <td>大米</td>
             <td>薏米</td>
             <td>黑芝麻</td>
             <td>黑豆</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-10</td>
             <td>大米</td>
             <td>莲子</td>
             <td>红豆</td>
             <td>桂圆</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-11</td>
             <td>大米</td>
             <td>薏米</td>
             <td>黑米</td>
             <td>红枣</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-12</td>
             <td>大米</td>
             <td>莲子</td>
             <td>黑芝麻</td>
             <td>黑豆</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-13</td>
             <td>大米</td>
             <td>薏米</td>
             <td>红豆</td>
             <td>桂圆</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-14</td>
             <td>大米</td>
             <td>莲子</td>
             <td>黑米</td>
             <td>红枣</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-15</td>
             <td>大米</td>
             <td>薏米</td>
             <td>黑芝麻</td>
             <td>黑豆</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-16</td>
             <td>大米</td>
             <td>莲子</td>
             <td>红豆</td>
             <td>桂圆</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-17</td>
             <td>大米</td>
             <td>薏米</td>
             <td>黑米</td>
             <td>红枣</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-19</td>
             <td>大米</td>
             <td>莲子</td>
             <td>黑芝麻</td>
             <td>黑豆</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-20</td>
             <td>大米</td>
             <td>薏米</td>
             <td>红豆</td>
             <td>桂圆</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-21</td>
             <td>大米</td>
             <td>莲子</td>
             <td>黑米</td>
             <td>红枣</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-22</td>
             <td>大米</td>
             <td>薏米</td>
             <td>黑芝麻</td>
             <td>黑豆</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-23</td>
             <td>大米</td>
             <td>莲子</td>
             <td>红豆</td>
             <td>桂圆</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-24</td>
             <td>大米</td>
             <td>薏米</td>
             <td>黑米</td>
             <td>红枣</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-25</td>
             <td>大米</td>
             <td>莲子</td>
             <td>黑芝麻</td>
             <td>黑豆</td>
         </tr>
-        <tr style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
+        <tr class="2018-11" style="border-bottom:1px solid #B7E6EF;height:30px;" onclick="display_alert(this)">
             <td>2018-11-26</td>
             <td>大米</td>
             <td>薏米</td>
